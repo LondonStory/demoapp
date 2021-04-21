@@ -26,7 +26,7 @@ app.layout = html.Div([
         id='datatable-interactivity',
         columns=[
             {"name": i, "id": i, "deletable": True, "selectable": True, "hideable": True}
-            if i == "state" or i == "id"
+            if i == "state"
             else {"name": i, "id": i, "deletable": True, "selectable": True}
             for i in df.columns
         ],
@@ -51,7 +51,7 @@ app.layout = html.Div([
             {
                 'if': {'column_id': c},
                 'textAlign': 'left'
-            } for c in ['state', 'Page Name']
+            } for c in ['Page Name', 'state']
         ],
         style_data={  # overflow cells' content into multiple lines
             'whiteSpace': 'normal',
